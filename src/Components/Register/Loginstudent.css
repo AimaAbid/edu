@@ -1,0 +1,17 @@
+.auth {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 100vh;
+  background-color: LightGreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+      
+
+ 
