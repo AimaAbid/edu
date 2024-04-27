@@ -4,7 +4,7 @@ function  Signupstudent(){
     return(
         <div className='container-student'>
        <form class="form-signup"> 
-       <h1>Signup student</h1>
+       <h1>Signup </h1>
     <div class="form-group">
      <div class="row">
             <div class="col-md-6">

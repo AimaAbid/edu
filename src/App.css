@@ -308,3 +308,7 @@ border-radius: 2%;
 .card-my-style{
   margin: 20px;
 }
+
+.card-img{
+  height: 300px;
+}

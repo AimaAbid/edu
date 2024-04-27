@@ -4,8 +4,22 @@ import Post from "./Post";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import MainPageHeader from "./MainPageHeader";
+import { useEffect,useState } from "react";
+import { title } from "process";
 
 export default function MainPage() {
+	var [posts, setPosts]=useState({
+		title:"",
+		description:"",
+		pic:""
+	});
+	
+
+
+
+	useEffect(() => {
+		getPosts();
+	})
 	return (
 		<div>
 			{/* <div className="header">
@@ -36,14 +50,34 @@ export default function MainPage() {
 			<MainPageHeader/>
 			<div className="main-page container ">
 				<SearchBar />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
+				{
+					posts.map((post)=>(
+						<div>
+							<p>{post.title}</p>
+							<p>{post.description}</p>
+							<img src={post.pic} alt="" />
+						</div>
+					))
+				}
+				
 			</div>
 			<Footer />
 		</div>
 	
 	);
+
+	async function getPosts(){
+		var res=await fetch("http://localhost:8000/allposts");
+		res=await res.json();
+		console.log(res);
+		// setDescription(res.description);
+		// setTitle(res.title);
+		// setImg(res.pic);
+		let obj={
+			title:res.title,
+			description:res.description,
+			pic:res.pic
+		}
+          setPosts({...posts, obj})
+	}
 }

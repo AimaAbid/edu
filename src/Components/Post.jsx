@@ -1,13 +1,15 @@
 import React from 'react'
-import I from "../Assets/G18.jpg"
+import I from "../Assets/Post.jpg"
 
 export default function Post() {
   return (
     <div className='container post' >
      
-      <p id='username'>User Name</p>
-      <p id='title'>Title</p>
+      
+      <p id='title'>Introduction to Machine Learning-Beginner </p>
+
       <br />
+      <p id='username'>Asmara Shafi</p>
       <img src={I} alt="img" />
       <br /><br />
       <button className='btn btn-primary ' id='button'>Read More</button>

@@ -21,36 +21,36 @@ export default function UploadedPosts() {
 					</thead>
 					<tbody>
 						<tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
+							<td>The Future of Computing: Trends and Predictions for the Next Decade"</td>
+							<td>05-02-2024</td>
 						</tr>
 						<tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
+							<td>Big Data Analytics: Leveraging Data for Insights and Innovation</td>
+							<td>06-02-2024</td>
 						</tr>
 						<tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
+							<td>The Rise of Quantum Computing: Revolutionizing Information Processing</td>
+							<td>08-02-2024</td>
 						</tr>
 						<tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
+							<td>Cyber Threats-Ransomware,Phishing and Social Engineering</td>
+							<td>08-02-2024</td>
 						</tr>
             <tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
+							<td>Kubernetes and Cloud Computing</td>
+							<td>09-02-2024</td>
+						</tr>
+						<tr>
+							<td>React Life Cyle and Hooks</td>
+							<td>09-02-2024</td>
+						</tr>
+						<tr>
+							<td>The Internet of Things : Connecting the World Through Smart Devices</td>
+							<td>09-02-2024</td>
 						</tr>
 						<tr>
 							<td>There I was</td>
-							<td>26-09-2000</td>
-						</tr>
-						<tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
-						</tr>
-						<tr>
-							<td>There I was</td>
-							<td>26-09-2000</td>
+							<td>09-02-2024</td>
 						</tr>
 					</tbody>
 				</table>
