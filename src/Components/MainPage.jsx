@@ -6,20 +6,18 @@ import Footer from "./Footer";
 import MainPageHeader from "./MainPageHeader";
 import { useEffect,useState } from "react";
 import { title } from "process";
+import { useNavigate } from "react-router-dom";
 
 export default function MainPage() {
-	var [posts, setPosts]=useState({
-		title:"",
-		description:"",
-		pic:""
-	});
+	var [posts,setPosts]=useState([]);
+	var navigate=useNavigate();
 	
 
 
 
 	useEffect(() => {
 		getPosts();
-	})
+	},[]);
 	return (
 		<div>
 			{/* <div className="header">
@@ -50,15 +48,21 @@ export default function MainPage() {
 			<MainPageHeader/>
 			<div className="main-page container ">
 				<SearchBar />
-				{
+				 {
 					posts.map((post)=>(
-						<div>
-							<p>{post.title}</p>
-							<p>{post.description}</p>
-							<img src={post.pic} alt="" />
-						</div>
+						<div className='container post' >
+     
+      
+						<p id='title'>{post.title} </p>
+				  
+						<br />
+						<p id='username'>{post.username}</p>
+						<img src={post.pic} alt="img" />
+						<br /><br />
+						<button className='btn btn-primary ' id='button' onClick={()=>{handleRead(post.id)}}>Read More</button>
+					  </div>
 					))
-				}
+				} 
 				
 			</div>
 			<Footer />
@@ -67,17 +71,14 @@ export default function MainPage() {
 	);
 
 	async function getPosts(){
-		var res=await fetch("http://localhost:8000/allposts");
-		res=await res.json();
-		console.log(res);
-		// setDescription(res.description);
-		// setTitle(res.title);
-		// setImg(res.pic);
-		let obj={
-			title:res.title,
-			description:res.description,
-			pic:res.pic
-		}
-          setPosts({...posts, obj})
+		var response=await fetch("http://localhost:8000/allposts");
+		response= await response.json();
+		//response is an array of objects
+		setPosts(response);
+		console.log(response);
+	}
+	function handleRead(id){
+		navigate(`/general-post/${id}`)
+
 	}
 }

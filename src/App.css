@@ -10,6 +10,10 @@
   font-family: 'Amiko';
 
 }
+
+.vertical-adjustment{
+  margin-top: 100px;
+}
 /* Header/////////////////////////////////////////////////////////////////////////////////////////// */
 .header {
   background-image: linear-gradient(to right bottom, #a61713, #be0035, #c50068, #aa00ac, #0000f7);
@@ -261,12 +265,18 @@ border-radius: 2%;
   color: aliceblue;
   list-style-type: none;
 }
+
+#delete-button-left{
+ margin-left: 70%;
+}
 /* UserPageLinks.............................................................................. */
 .position-adjustment{
   margin-top: 130px;
   margin-left: 250px;
 
 }
+
+
 
 .table-heading{
   font-size:x-large;
@@ -298,17 +308,27 @@ border-radius: 2%;
 }
 
 /* Course Description////////////////////////////////////// */
-.course-description{
+.course-description1{
   font-size: small;
 }
-.course-price{
+.course-price1{
   font-size: medium;
   color: #0000f7;
 }
-.card-my-style{
+.card-my-style1{
   margin: 20px;
 }
 
-.card-img{
+.card-img1{
   height: 300px;
+}
+/*CoursePage //////////////////////////////////////////////////// */
+#course-button{
+  margin: 10px;
+  margin-left: 90px;
+  justify-content: center;
+}
+.course-card-container{
+  background-color:whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
