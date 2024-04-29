@@ -2,7 +2,7 @@
     width: 100%;
     
     border-radius: 5px;
-    height: 640px;
+    height: 740px;
     background-image: linear-gradient(to right bottom, #a61713, #be0035, #c50068, #aa00ac, #0000f7);
    
     display: flex;
@@ -14,7 +14,7 @@
 
 .form-signup {
     width: 400px;
-    height: 640px;
+    height: 680px;
     padding: 10px;
     margin: 0 auto; /* Center the form horizontally */
     display: flex;
