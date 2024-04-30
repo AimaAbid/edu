@@ -1,26 +1,76 @@
-import './Loginstudent.css';
-function Loginstudent() {
+import "./Loginstudent.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+export default function Loginstudent() {
+	var [email, setEmail] = useState("");
+	var [password, setPassword] = useState("");
+	var [errorMessage, setErrorMessage] = useState("");
+    var navigate=useNavigate();
 
-    return(
-        <div class="auth">
-        <form class="form-signup"> 
-        <h1>Login</h1>
-             <div class="form-group">
-             <label for="inputFirstname">Firstname:</label>
-                <input type="text" className="form-control" placeholder="Enter username"/>
-                   </div>
-                   <div className='form-group'>
-                   <label for="inputpassword">password:</label>
-                <input type="text" className="form-control" placeholder="Password"/>
-                   </div>
-                   <div className='form-group'>
-                <input type="submit" className="btn btn-success" value="Submit"/> 
-            </div>
-            </form>
-            
-        </div>
-    );
+	return (
+		<div class="auth">
+			<form class="form-signup">
+				<h1>Login</h1>
+				<div class="form-group">
+					<label for="inputFirstname">Firstname:</label>
+					{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+					<input
+						type="email"
+						className="form-control"
+						onChange={(e) => setEmail(e.target.value)}
+						value={email}
+						placeholder="Enter username"
+					/>
+				</div>
+				<div className="form-group">
+					<label for="inputpassword">password:</label>
+					<input
+						type="password"
+						className="form-control"
+						placeholder="Password"
+						onChange={(e) => setPassword(e.target.value)}
+						required
+						value={password}
+					/>
+				</div>
+				<div className="form-group">
+					<input
+						type="submit"
+						required
+						onClick={handleSubmit}
+						className="btn btn-success"
+						value="Submit"
+					/>
+				</div>
+			</form>
+		</div>
+	);
+
+	async function handleSubmit(e) {
+		e.preventDefault();
+
+		try {
+			const response = await fetch("http://localhost:8000/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email, password }),
+			});
+			const data = await response.json();
+			if (response.ok) {
+                alert("Login successful");
+				console.log("Login successful!", data.userId);
+				// Save user ID in localStorage
+				localStorage.setItem("userId", data.userId);
+				// Redirect user to another page
+				navigate("/main-page");
+			} else {
+				setErrorMessage(data.message);
+                alert("Login  not successful!");
+			}
+		} catch (error) {
+			console.error("Error:", error);
+		}
+	}
 }
-
-export default Loginstudent
-

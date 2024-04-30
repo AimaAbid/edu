@@ -47,7 +47,7 @@ const Post = () => {
 					<p className="post-content">{post.description}</p>
                     <br /><br />
                     <button className="btn btn-lg btn-primary" onClick={handleEdit}> Edit Post! </button>
-                    <button className="btn btn-lg btn-danger " id="delete-button-left"> Delete Post! </button>
+                    <button className="btn btn-lg btn-danger " id="delete-button-left" onClick={deletePost} > Delete Post! </button>
 				</div>
 			</div>
             <Footer/>
@@ -63,6 +63,12 @@ const Post = () => {
 	async function handleEdit(){
 		navigate(`/edit/${id}`);
 		
+	}
+	async function deletePost(){
+		await fetch("http://localhost:8000/deletepost/"+id);
+		alert("User Deleted Successfully");
+		navigate("/uploaded-posts");
+
 	}
 };
 

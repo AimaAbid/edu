@@ -55,18 +55,14 @@ export default function CreatePost() {
 								placeholder="Body"
 							/>
 						</div>
+						<input type="file" onChange={handleMedia} />
 
-						{/* <div className="form-group">
-                    <button><i class="fa fa-link" aria-hidden="true"></i></button> 
-                     <button><i class="fa-solid fa-image"></i></button>
-                     <button><i class="fa-solid fa-video"></i></button>
-                     <button><i class="fa-solid fa-audio-description"></i></button>
-                     </div> */}
+						
 						<button className="btn btn-success" onClick={handleSubmit}>
 							Submit
 						</button>
 					</div>
-					<input type="file" onChange={handleMedia} />
+					
 					{/* <img src={img} alt="" /> */}
 				</div>
 			</div>

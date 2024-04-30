@@ -57,7 +57,7 @@ export default function MainPage() {
 				  
 						<br />
 						<p id='username'>{post.username}</p>
-						<img src={post.pic} alt="img" />
+						<img src={post.file} alt="img" />
 						<br /><br />
 						<button className='btn btn-primary ' id='button' onClick={()=>{handleRead(post.id)}}>Read More</button>
 					  </div>

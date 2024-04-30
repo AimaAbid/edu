@@ -18,6 +18,7 @@ import UploadedCourses from "./Components/Courses/UploadedCourses";
 import Post from "./Components/UserPageLinks/Post";
 import PostNoEdit from "./Components/PostNoEdit";
 import EditPage from "./Components/UserPageLinks/EditPage";
+import Loginstudent from "./Components/Register/Loginstudent";
 
 //for now since we dont have login or signup logic we paste posts in routes "/"
 
@@ -28,7 +29,8 @@ function App() {
 				<Route path="/" element={<Home />}></Route>
 				<Route path="/signup" element={<Signup />}></Route>
 				{/* the below one is actually login, its for development purposes i have put mainpage there */}
-				<Route path="/login" element={<MainPage />}></Route>
+				<Route path="/login" element={<Loginstudent />}></Route>
+				<Route path="/main-page" element={<MainPage />}></Route>
 				<Route path="/user" element={<UserPage />}></Route>
 				<Route path="/details/:id" element={<PersonalDetails />}></Route>
 				<Route path="/create-post" element={<CreatePost />}></Route>

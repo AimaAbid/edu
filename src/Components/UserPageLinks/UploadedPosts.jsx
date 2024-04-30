@@ -7,10 +7,13 @@ import { useNavigate } from "react-router-dom";
 export default function UploadedPosts() {
 	var [uploadedPosts,setUploadedPosts] =useState([]);
 	var navigate=useNavigate();
+	// user id stored in local storage for login
+	var [userId]=localStorage.getItem("userId");
 	useEffect(() =>{
 		getUploadedPosts();
 
 	},[]);
+	
 	return (
 		<div>
 			<DashHeader />
@@ -78,8 +81,9 @@ export default function UploadedPosts() {
 			</div>
 		</div>
 	);
-	async function getUploadedPosts(){
-		var response= await fetch("http://localhost:8000/post/1");//change this with id when login logic is implemented and login gives id
+	async function getUploadedPosts(id){
+		console.log(userId);
+		var response= await fetch("http://localhost:8000/post/"+userId);//change this with id when login logic is implemented and login gives id
 		response=await response.json();
 		console.log(response);
 		setUploadedPosts(response);
