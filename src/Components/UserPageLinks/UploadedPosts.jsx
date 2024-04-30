@@ -79,7 +79,7 @@ export default function UploadedPosts() {
 		</div>
 	);
 	async function getUploadedPosts(){
-		var response= await fetch("http://localhost:8000/post/2");//change this with id when login logic is implemented and login gives id
+		var response= await fetch("http://localhost:8000/post/1");//change this with id when login logic is implemented and login gives id
 		response=await response.json();
 		console.log(response);
 		setUploadedPosts(response);

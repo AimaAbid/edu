@@ -43,7 +43,7 @@ const Post = () => {
 				<div className="post-container">
 					<h1 className="post-title">{post.title}</h1>
 					<p className="post-author">{post.username}</p>
-					<img className="post-image" src={post.pic} alt="Post" />
+					<img className="post-image" src={post.file} alt="Post" />
 					<p className="post-content">{post.description}</p>
                     <br /><br />
                     <button className="btn btn-lg btn-primary" onClick={handleEdit}> Edit Post! </button>
