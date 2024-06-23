@@ -336,3 +336,14 @@ border-radius: 2%;
 a{
   color: white;
 }
+.search-results{
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+/* size of quill text editor */
+.size{
+  width: 500px;
+  height: 500px;
+
+}

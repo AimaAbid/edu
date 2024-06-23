@@ -4,81 +4,82 @@ import Post from "./Post";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import MainPageHeader from "./MainPageHeader";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { title } from "process";
 import { useNavigate } from "react-router-dom";
 
 export default function MainPage() {
-	var [posts,setPosts]=useState([]);
-	var navigate=useNavigate();
-	
-
-
+	var [posts, setPosts] = useState([]);
+	var navigate = useNavigate();
+	const [searchQuery, setSearchQuery] = useState("");
+	const [searchResults, setSearchResults] = useState([]);
 
 	useEffect(() => {
 		getPosts();
-	},[]);
+	}, []);
 	return (
 		<div>
-			{/* <div className="header">
-				<div className="left">
-					<i class="fa fa-rss" aria-hidden="true">
-						&nbsp;
-					</i>
-					EduCollabHub
-				</div>
-				<div id="right">
-					<ul>
-						<li>
-							<Link to="/course-list">Courses!</Link>
-						</li>
-						<li>
-							<Link to="/x">Sponsorship!</Link>
-              {/* on clicking on sponsorship a dropdown list opens then we can chose to become a sponsor or apply for sopnsorship  */}
-						{/* </li>
-						<li>
-							<Link to="/x">Alumni!</Link>
-						</li>
-						<li >
-							<Link to="/user" ><i class="fa fa-user-circle" aria-hidden="true" ></i></Link>
-						</li>
-					</ul>
-				</div>
-			</div> */} 
-			<MainPageHeader/>
+			<MainPageHeader />
 			<div className="main-page container ">
-				<SearchBar />
-				 {
-					posts.map((post)=>(
-						<div className='container post' >
-     
-      
-						<p id='title'>{post.title} </p>
-				  
+				<div className="search-results"></div>
+				<div>
+					<div>
+						{searchResults.map((post) => (
+							<div >
+								<h2>{post.title}</h2>
+								<p>{post.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				{posts.map((post) => (
+					<div className="container post">
+						<p id="title">{post.title} </p>
+
 						<br />
-						<p id='username'>{post.username}</p>
-						<img src={post.file} alt="img" />
-						<br /><br />
-						<button className='btn btn-primary ' id='button' onClick={()=>{handleRead(post.id)}}>Read More</button>
-					  </div>
-					))
-				} 
-				
+						{/* <p id="username">{post.username}</p> */}
+						{/* <img src={post.file} alt="img" /> */}
+						<br />
+						<br />
+						<button
+							className="btn btn-primary "
+							id="button"
+							// onClick={() => {
+							// 	handleRead(post.id);
+							// }}
+						>
+							Read More
+						</button>
+					</div>
+				))}
 			</div>
 			<Footer />
 		</div>
-	
 	);
 
-	async function getPosts(){
-		var response=await fetch("http://localhost:8000/allposts");
-		response= await response.json();
+	async function getPosts() {
+		var response = await fetch("http://localhost:8000/posts");
+		response = await response.json();
 		//response is an array of objects
 		setPosts(response);
 		console.log(response);
 	}
-	function handleRead(id){
-		navigate(`/general-post/${id}`)
-
+	function handleRead(id) {
+		navigate(`/general-post/${id}`);
+	}
+	async function handleSearch() {
+		fetch("/search", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ searchQuery }),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				setSearchResults(data);
+			})
+			.catch((error) => console.error("Error:", error));
 	}
 }

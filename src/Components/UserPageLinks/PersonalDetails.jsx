@@ -26,6 +26,7 @@ export default function PersonalDetails() {
 									type="text"
 									class="form-control"
 									
+									
 								/>
 							
 								<label >Email address</label>

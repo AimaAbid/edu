@@ -18,7 +18,7 @@ export default function MainPageHeader() {
 							<Link to="/course-list">Courses!</Link>
 						</li>
 						<li>
-							<Link to="/x">Sponsorship!</Link>
+							<Link to="/sponsor">Sponsorship!</Link>
               {/* on clicking on sponsorship a dropdown list opens then we can chose to become a sponsor or apply for sopnsorship  */}
 						</li>
 						<li>

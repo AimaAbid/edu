@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./Createpost.css";
 
+
 export default function EditPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

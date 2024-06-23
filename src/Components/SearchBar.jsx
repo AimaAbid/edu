@@ -6,7 +6,7 @@ export default function SearchBar() {
 			
 
 			<div class="input-group mb-3">
-				<input
+				<input 
 					type="text"
 					class="form-control"
 					placeholder="Search"

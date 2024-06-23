@@ -2,7 +2,7 @@ import "./Loginstudent.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Loginstudent() {
-	var [email, setEmail] = useState("");
+	var [name, setName] = useState("");
 	var [password, setPassword] = useState("");
 	var [errorMessage, setErrorMessage] = useState("");
     var navigate=useNavigate();
@@ -12,13 +12,13 @@ export default function Loginstudent() {
 			<form class="form-signup">
 				<h1>Login</h1>
 				<div class="form-group">
-					<label for="inputFirstname">Firstname:</label>
+					<label for="inputFirstname">Name:</label>
 					{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 					<input
 						type="email"
 						className="form-control"
-						onChange={(e) => setEmail(e.target.value)}
-						value={email}
+						onChange={(e) => setName(e.target.value)}
+						value={name}
 						placeholder="Enter username"
 					/>
 				</div>
@@ -50,15 +50,15 @@ export default function Loginstudent() {
 		e.preventDefault();
 
 		try {
-			const response = await fetch("http://localhost:8000/login", {
+			const response = await fetch("http://localhost:8000/users/login", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ email, password }),
+				body: JSON.stringify({ name, password }),
 			});
 			const data = await response.json();
-			if (response.ok) {
+			if (response.status===200) {
                 alert("Login successful");
 				console.log("Login successful!", data.userId);
 				// Save user ID in localStorage

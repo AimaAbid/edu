@@ -1,7 +1,9 @@
 import './Alumni.css';
+import { Link } from 'react-router-dom';
 function   Alumni(){
+   
     return(
-        <div class="container">
+        <div class="alumni-container">
        <form class="form-signup"> 
        <h1>Alumni</h1>
     <div class="form-group">
@@ -42,11 +44,15 @@ function   Alumni(){
         </div>
        
 
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit"  onClick={handleClick} class="btn btn-success"><Link to="/alumni-login">Alumni Login!</Link></button>
     </form> 
 </div>
         
   );
+   function handleClick(e){
+
+    e.preventDefault();
+  }
     
 }
 export default Alumni
