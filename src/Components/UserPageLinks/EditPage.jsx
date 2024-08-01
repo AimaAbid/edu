@@ -1,138 +1,131 @@
-import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import MainPageHeader from "../MainPageHeader";
 import "./Createpost.css";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { toast } from 'react-toastify';
+//  toast.success("Logged out successfully");
+//         toast.success('Success Notification!');
+//     toast.error('Error Notification!');
+//     toast.info('Info Notification!');
+//     toast.warn('Warning Notification!');
 
-
-export default function EditPage() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [file, setFile] = useState("");
-  const [subject, setSubject] = useState("");
-  const [post, setPost] = useState({
-    title: "",
-    subject: "",
-    description: "",
-    file: "",
-    userId: "1",
-    username: "Aima",
-  });
-
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  async function getData() {
-    const res = await fetch("http://localhost:8000/viewpost/" + id);
-    const data = await res.json();
-    const postData = data[0];
-    setTitle(postData.title);
-    setDescription(postData.description);
-    setSubject(postData.subject);
-    setPost(postData);
-  }
-
-  const handleTitle = (e) => {
-    setTitle(e.target.value);
-    setPost({ ...post, title: e.target.value });
-  };
-
-  const handleSubject = (e) => {
-    setSubject(e.target.value);
-    setPost({ ...post, subject: e.target.value });
-  };
-
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
-    setPost({ ...post, description: e.target.value });
-  };
-
-  const handleMedia = async (e) => {
-    const formData = new FormData();
-    formData.append("file", e.target.files[0]);
-    const response = await fetch("http://localhost:8000/upload", {
-      method: "POST",
-      body: formData,
+export default function CreatePost() {
+    const [post, setPost] = useState({
+        title: "",
+        bodySection: "",
+        imgPath: "",
     });
-    const data = await response.json();
-    setFile(data.imgPath);
-    setPost({ ...post, file: data.imgPath });
-  };
+    const [value, setValue] = useState("");
+    const [file, setFile] = useState(null);
 
-  const handleEdit = async (e) => {
-    e.preventDefault();
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-    await fetch("http://localhost:8000/edit-post/" + id, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(post),
-    });
-    alert("Post Edited successfully");
-    navigate("/uploaded-posts");
-  };
+    useEffect(() => {
+        getData();
+    }, []);
 
-  return (
-    <div>
-      <div className="dash-header ">
-        <div className="both" id="left">
-          <i className="fa fa-rss" aria-hidden="true">
-            &nbsp;
-          </i>
-          EduCollabHub
-        </div>
+    
 
-        <div className="both" id="dash-right">
-          <Link to={`/post/${id}`}>Go Back</Link>
-        </div>
-      </div>
+    async function getData() {
+        try {
+            const response = await axios.get(`http://localhost:8000/posts/post/${id}`);
+            setPost(response.data);
+            setValue(response.data.bodySection);
+            setFile(response.data.imgPath[0]);
+        } catch (error) {
+            console.error("Error fetching post data:", error);
+        }
+    }
 
-      <div className="vertical-adjustment">
-        <div className="auth">
-          <div className="form">
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control input-title"
-                value={title}
-                placeholder="Title"
-                onChange={handleTitle}
-              />
+    const handleChange = (e) => {
+        setPost({ ...post, [e.target.name]: e.target.value });
+    };
+
+    const handleMedia = async (e) => {
+        const formData = new FormData();
+        for (let i = 0; i < e.target.files.length; i++) {
+            formData.append("filename", e.target.files[i]);
+        }
+        try {
+            const response = await axios.post("http://localhost:8000/posts/up", formData);
+            setPost({ ...post, imgPath: response.data[0] });
+            setFile(response.data[0]);
+        } catch (error) {
+            console.error("Error uploading image:", error);
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const postData = {
+                ...post,
+                bodySection: value,
+            };
+
+            const response = await axios.put(`http://localhost:8000/posts/${id}`, postData);
+            if (response.status === 200) {
+                toast.success("Post Updated Successfully");
+                navigate("/uploaded-posts");
+            } else {
+                alert("Failed to update post");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+
+    return (
+        <div>
+            <MainPageHeader />
+
+            <div>
+                <div >
+                    <div className="form">
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                className="form-control input-title"
+                                placeholder="Title"
+                                name="title"
+                                onChange={handleChange}
+                                value={post.title}
+                            />
+                        </div>
+
+                        {file && (
+                            <div className="form-group">
+                                <label>Current Image:</label>
+                                <img
+                                    src={`http://localhost:8000/uploads/${file}`}
+                                    style={{width:"200px"}}
+                                    alt="Current Post"
+                                    className="current-post-image"
+                                />
+                            </div>
+                        )}
+
+                        <div className="form-group">
+                            <ReactQuill
+                                className="editor size"
+                                theme="snow"
+                                value={value}
+                                onChange={setValue}
+                            />
+                        </div>
+                        <input type="file" onChange={handleMedia} />
+
+                        <button className="btn btn-success" onClick={handleSubmit}>
+                            Submit
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div className="form-group">
-              <select
-                value={subject}
-                onChange={handleSubject}
-                name="subject"
-              >
-                <option>Computer network</option>
-                <option>Automata</option>
-                <option>Compiler</option>
-                <option>DBMS</option>
-                <option>Data Structure</option>
-                <option>Microprocessor</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control input-body"
-                value={description}
-                placeholder="Body"
-                onChange={handleDescription}
-                name="description"
-              />
-            </div>
-            <input type="file" onChange={handleMedia} />
-
-            <button className="btn btn-success" onClick={handleEdit}>
-              Submit
-            </button>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }

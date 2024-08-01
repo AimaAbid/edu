@@ -39,15 +39,15 @@ export default function MainPage() {
 
 						<br />
 						{/* <p id="username">{post.username}</p> */}
-						{/* <img src={post.file} alt="img" /> */}
+						<img src={`http://localhost:8000/uploads/${post.imgPath}`} alt="img" />
 						<br />
 						<br />
 						<button
 							className="btn btn-primary "
 							id="button"
-							// onClick={() => {
-							// 	handleRead(post.id);
-							// }}
+							onClick={() => {
+								handleRead(post._id);
+							}}
 						>
 							Read More
 						</button>

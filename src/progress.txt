@@ -1,0 +1,56 @@
+I made the personal details section work where one can update their email,name password and profile pic.
+please read the code again from PerosnalDetails.jsx, you are still not good at it
+
+
+To do:
+29/06 sat
+implement edit posts...done
+implement comments
+
+30/06 sun
+implement comments....in postnoedit page....beware yesterday i landed into problems while doing it....understand logic...read code first
+
+
+1/7/24 mon
+implemented create comment and get comments on a post but still username and pfp is not present,also in post no edit still the user pfp for post isnt visible  do it, by the way i worked very hard for commen
+
+2/7/24 tuesday
+just gave half an hour yesterday so today project first not much progress just on creating comment it visible at that time only
+
+objectives are same as yesterday...how to fetch comment owner name and pic is issue use chatgpt
+
+3/7
+issues issues i took code from chatgpt but it calls the api of comments in wrong way ....name of comment maker is visible just img is not visible chat gpt has given rectified code only in post no edit...check it after corrwecting api call and continue ;)
+4/7
+set option to remove pfp
+5/7
+i spent time in ui
+well i used a sidebar but its too complex i have an idea collapse component from bootstrap might work
+also i think i need to use bootstrap elemeemts innovatively so whenevr u need anything in ui just search bootstrap and think which element can be used i feel it has all the answers
+
+6/7
+ui peh bohat time laggaya but i am proud kuch naya sikha ki bootstrap mai innovatively combine karsakte hai jaise maine list aur collapse ko combine kiya i feel like a front end developer now yeahhhhhhhhh:)
+ab dekho backend mai course related schema kaise banana hai.....pehle socho help b lo j sai
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+Fixes needed:
+the file upload button in personal details
+the text retrieved from mongodb is not formatted 
+create post ui issue
+set option to remove pfp
+authenticatioon when logging in
+use word spacing letter spcaing and line heught in posts
+27/7
+problem in submitting answer
+
+
+////////////learnt//////////////////////////////////////////////////////////////////////////////////
+
+.post>img:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  //you can change size, color inside this simply and gives very nice effect
+
+  width:increase or decrease
+
+}

@@ -2,6 +2,12 @@ import "./Signupstudent.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+//  toast.success("Logged out successfully");
+//         toast.success('Success Notification!');
+//     toast.error('Error Notification!');
+//     toast.info('Info Notification!');
+//     toast.warn('Warning Notification!');
 function Signupstudent() {
 	var [details, setDetails] = useState({
 		name:"",
@@ -110,7 +116,7 @@ function Signupstudent() {
 			body: JSON.stringify(details),
 		});
 		if (response.ok) {
-			alert("User Added Successfully");
+			toast.success("Signed up  successfully");
 			console.log(response.data);
 			navigate("/");
 		}

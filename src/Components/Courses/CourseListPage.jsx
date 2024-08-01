@@ -5,108 +5,120 @@ import Cyber from "../../Assets/unnamed.jpg";
 import ML from "../../Assets/Post.jpg";
 import ML2 from "../../Assets/ML2.jpg";
 import MainPageHeader from "../MainPageHeader";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./CourseListPage.css"; // Add this line to import CSS
 
 export default function CourseListPage() {
+	var navigate = useNavigate();
 
-	var navigate=useNavigate();
-
-	var [courses,setCourses]=useState([]);
-	useEffect(()=>{
+	var [courses, setCourses] = useState([]);
+	useEffect(() => {
 		getCourses();
-
-	},[]);
+	}, []);
 	return (
 		<div>
 			<MainPageHeader />
-			{/* <div class="conatainer">
-                 <div class="row">;
-        {/* pictures.forEach((picture) => {
-           <div class="col-sm-4"> <div class="card" style="width: 18rem;">
-         <img src=${picture.thumbnailUrl} class="card-img-top" alt="image">
-         <div class="card-body">
-         <h5 class="card-title">${picture.title}</h5> */}
 
-			{/* </div>
-         </div>
-         </div> */}
-			<div className="container ">
+			<div className="container">
 				<br />
 				<br />
 				<br />
+
 				<div className="row">
-					{courses.map((course) => (
-						<div class="col-sm-4">
-							<div class="card card-my-style1 course-card-container" style={{width: "18rem"}}>
-								<img src={course.pic} class="card-img-top" alt="user" />
-								<div class="card-body1">
-									<h5 class="card-title1">{course.title}</h5>
-                                    <div className="course-description1">{course.description}</div>
-									<div className="course-description1">{course.tutor}</div>
-                                    <div class="course-price1">{course.price}</div>
-									<button onClick={()=>{handleClick(course.id)}} className="btn btn-primary" id="course-button" >Explore!</button>
+					{/* {courses.map((course) => (
+						<div className="col-sm-4 mb-4" key={course.id}>
+							<div className="card course-card">
+								<img src={course.pic} className="card-img-top" alt={course.title} />
+								<div className="card-body">
+									<h5 className="card-title">{course.title}</h5>
+									<p className="card-text">{course.description}</p>
+									<p className="card-text tutor">{course.tutor}</p>
+									<p className="card-text price">₹ {course.price}</p>
+									<button
+										onClick={() => handleClick(course.id)}
+										className="btn btn-primary"
+									>
+										Explore!
+									</button>
 								</div>
 							</div>
-                            
 						</div>
-					))}
-					{/* <div class="col-sm-4">
-						<div class="card card-my-style1">
-							<img src={Cyber} class="card-img1" alt="user" />
-							<div class="card-body">
-								<h5 class="card-title">Ethical Hacking</h5>
-								<div className="course-description1">
-									Learn pentesting and get certified
-								</div>
-								<div className="course-description1">Iliyas Shafi</div>
-								<div class="course-price1">Rs 1000</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="card card-my-style1">
-							<img src={ML} class="card-img1" alt="user" />
-							<div class="card-body">
-								<h5 class="card-title">Machine Learning</h5>
-								<div className="course-description1">
-									Dive into the field of machine learning
-								</div>
-								<div className="course-description1">Dr Chen Lee</div>
-								<div class="course-price1">Rs 1500</div>
+					))} */}
+
+					<div className="col-sm-4 mb-4">
+						<div className="card course-card">
+							<img src={Cyber} className="card-img-top" alt="Introduction to Cyber Security" />
+							<div className="card-body">
+								<h5 className="card-title">Introduction to Cyber Security</h5>
+								<p className="card-text">Cyber Security Basics</p>
+								<p className="card-text price">₹ 500</p>
+								<button
+									onClick={() => {
+										handleClick();
+									}}
+									className="btn btn-primary"
+								>
+									Explore!
+								</button>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-sm-4">
-						<div class="card card-my-style1">
-							<img src={ML2} class="card-img1" alt="user" />
-							<div class="card-body">
-								<h5 class="card-title">Data Science</h5>
-								<div className="course-description1">
-									Dive into the field of Data Science
-								</div>
-								<div className="course-description1">Dr Chen Lee</div>
-								<div class="course-price1">Rs 1550</div>
+
+					<div className="col-sm-4 mb-4">
+						<div className="card course-card">
+							<img src={Cyber} className="card-img-top" alt="Introduction to Cyber Security" />
+							<div className="card-body">
+								<h5 className="card-title">Introduction to Cyber Security</h5>
+								<p className="card-text">Cyber Security Basics</p>
+								<p className="card-text price">₹ 500</p>
+								<button
+									onClick={() => {
+										handleClick();
+									}}
+									className="btn btn-primary"
+								>
+									Explore!
+								</button>
 							</div>
 						</div>
-					</div> */}
+					</div>
+
+
+					<div className="col-sm-4 mb-4">
+						<div className="card course-card">
+							<img src={Cyber} className="card-img-top" alt="Introduction to Cyber Security" />
+							<div className="card-body">
+								<h5 className="card-title">Introduction to Cyber Security</h5>
+								<p className="card-text">Cyber Security Basics</p>
+								<p className="card-text price">₹ 500</p>
+								<button
+									onClick={() => {
+										handleClick(1);
+									}}
+									className="btn btn-primary"
+								>
+									Explore!
+								</button>
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 			<Footer />
 		</div>
 	);
 
-	async function getCourses(){
-		var response=await fetch("http://localhost:8000/allcourses");
-		response= await response.json();
+	async function getCourses() {
+		var response = await fetch("http://localhost:8000/allcourses");
+		response = await response.json();
 		//response is an array of objects
 		setCourses(response);
 		console.log(response[0]);
-
 	}
-	function handleClick(id){
-		navigate(`/course/${id}`);
-		
+	function handleClick(id) {
+		navigate("/course/1");
 	}
 }

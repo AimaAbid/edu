@@ -14,7 +14,10 @@ export default function Dashboard() {
 			
 			
 			<ul className="sidebar">
-				<li>Welcome User!</li>
+				<li><strong>Welcome Back!</strong></li>
+				<li>
+					<Link to="/performance-dashboard">Performance Dashboard</Link>
+				</li>
 				<li>
 					<Link to="/details/1">Personal Details</Link>
 				</li>
@@ -25,7 +28,7 @@ export default function Dashboard() {
 					<Link to="/uploaded-posts">Uploaded Posts</Link>
 				</li>
                 <li>
-					<Link to="/pending-posts">Pending Posts</Link>
+					<Link to="/main-page">Go Back</Link>
 				</li>
 				
 				

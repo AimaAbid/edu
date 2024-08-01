@@ -12,11 +12,12 @@
 
 .form {
     width: 600px;
-    height: 620px;
+    height: 100vh;
     padding: 30px; 
     /* white smoke+this box shadow killer combination! */
-    background-color: whitesmoke;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+   
+   
+    display: block;
    
     margin-top: 0;
 }
@@ -50,6 +51,16 @@ button{
     border:none;
     cursor: pointer;  
     background-color: white; 
+    
+   
+}
+.btn1{
+    display: block;
+}
+
+.in{
+    display: block;
+    margin-top: 60px;
 }
 
 

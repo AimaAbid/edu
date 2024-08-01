@@ -1,6 +1,12 @@
 import "./Loginstudent.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+//  toast.success("Logged out successfully");
+//         toast.success('Success Notification!');
+//     toast.error('Error Notification!');
+//     toast.info('Info Notification!');
+//     toast.warn('Warning Notification!');
 export default function Loginstudent() {
 	var [name, setName] = useState("");
 	var [password, setPassword] = useState("");
@@ -59,7 +65,7 @@ export default function Loginstudent() {
 			});
 			const data = await response.json();
 			if (response.status===200) {
-                alert("Login successful");
+                toast.success("Logged in successfully");
 				console.log("Login successful!", data.userId);
 				// Save user ID in localStorage
 				localStorage.setItem("userId", data.userId);

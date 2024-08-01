@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import MainPage from './Components/MainPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css' ;
 // import Slider from './Components/Slider';
 
 
@@ -13,7 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
     <App />
+    <ToastContainer />
     </BrowserRouter>
+    
   // <Slider />
   // <MainPage />
 

@@ -23,12 +23,15 @@ import Checkout from "./CheckOutForm";
 import AlumniLogin from "./Components/Register/AlumniLogin";
 import SearchedPosts from "./Components/SearchedPosts";
 import Sponsor from "./Components/Register/Sponsor";
+import Quiz11 from "./Components/Courses/Quiz11";
+import CourseDetails from "./Components/Courses/CourseDetails";
+import PerformanceDashboard from "./Components/UserPageLinks/PerformanceDashboard";
 
 //for now since we dont have login or signup logic we paste posts in routes "/"
 
 function App() {
 	return (
-		<div>
+		<div  className="urbanist">
 			<Routes>
 				<Route path="/" element={<Home />}></Route>
 				<Route path="/signup" element={<Signup />}></Route>
@@ -52,6 +55,9 @@ function App() {
 				<Route path="/edit/:id" element={<EditPage />}></Route>
 				<Route path="/searched-posts" element={<SearchedPosts />}></Route>
 				<Route path="/sponsor" element={<Sponsor />}></Route>
+				<Route path="/quiz/:moduleId" element={<Quiz11 />}></Route>
+				<Route path="/course-details/:moduleId" element={<CourseDetails />}></Route>
+				<Route path="/performance-dashboard" element={<PerformanceDashboard />}></Route>
 			</Routes>
 		</div>
 	);
