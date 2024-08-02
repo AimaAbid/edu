@@ -8,6 +8,8 @@ import MainPageHeader from "../MainPageHeader";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CourseListPage.css"; // Add this line to import CSS
+import ReactImg from "../../Assets/reactjs.jpg"
+import NodeImg from "../../Assets/nodejs.png"
 
 export default function CourseListPage() {
 	var navigate = useNavigate();
@@ -52,11 +54,33 @@ export default function CourseListPage() {
 							<div className="card-body">
 								<h5 className="card-title">Introduction to Cyber Security</h5>
 								<p className="card-text">Cyber Security Basics</p>
-								<p className="card-text price">₹ 500</p>
+								<br />
+								<br />
 								<button
 									onClick={() => {
 										handleClick();
 									}}
+									className="btn btn-primary "
+								>
+									Explore!
+								</button>
+							</div>
+						</div>
+					</div>
+
+
+					<div className="col-sm-4 mb-4">
+						<div className="card course-card">
+							<img src={ReactImg} className="card-img-top" alt="Introduction to Cyber Security" />
+							<div className="card-body">
+								<h5 className="card-title">Introduction to React Course</h5>
+								<p className="card-text">Web Development Basics</p>
+								<br /><br />
+								<button
+									onClick={() => {
+										handleClick();
+									}}
+									
 									className="btn btn-primary"
 								>
 									Explore!
@@ -68,31 +92,11 @@ export default function CourseListPage() {
 
 					<div className="col-sm-4 mb-4">
 						<div className="card course-card">
-							<img src={Cyber} className="card-img-top" alt="Introduction to Cyber Security" />
+							<img src={NodeImg} className="card-img-top" alt="Introduction to Cyber Security" />
 							<div className="card-body">
-								<h5 className="card-title">Introduction to Cyber Security</h5>
-								<p className="card-text">Cyber Security Basics</p>
-								<p className="card-text price">₹ 500</p>
-								<button
-									onClick={() => {
-										handleClick();
-									}}
-									className="btn btn-primary"
-								>
-									Explore!
-								</button>
-							</div>
-						</div>
-					</div>
-
-
-					<div className="col-sm-4 mb-4">
-						<div className="card course-card">
-							<img src={Cyber} className="card-img-top" alt="Introduction to Cyber Security" />
-							<div className="card-body">
-								<h5 className="card-title">Introduction to Cyber Security</h5>
-								<p className="card-text">Cyber Security Basics</p>
-								<p className="card-text price">₹ 500</p>
+								<h5 className="card-title">Complete Nodejs Course</h5>
+								<p className="card-text">Get started with Node!</p>
+								<br /><br />
 								<button
 									onClick={() => {
 										handleClick(1);

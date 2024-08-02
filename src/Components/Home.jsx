@@ -9,6 +9,9 @@ import L3 from "../Assets/L3.png";
 import L4 from "../Assets/L4.png";
 import Footer from "./Footer";
 import Header from "./Header";
+import Left from "../Assets/left.png"
+import Right from "../Assets/right.png"
+
 
 //for now since we dont have login or signup logic we directly paste Mainpage in app.js as and when needed
 
@@ -28,21 +31,67 @@ export default function Home() {
 	return (
 		<div>
 			<Header />
+			<div className="img-section">
+			<div className="text">
+			<p><strong>EduCollabHub</strong></p>
+			<p>EduCollabHub: Learn Together, Level Up Forever</p>
+			</div>
+			</div>
 			<div className="home ">
 				<h1>EduCollabHub</h1>
 				<h5>EduCollabHub: Learn Together, Level Up Forever</h5>
-				<img src={Logo} alt="LOGO" />
+			
 
-				<br />
-				<div className="container">
-					<h5>
-						Welcome to EduCollabHub, a pioneering initiative in collaborative
-						learning and knowledge exchange.
-					</h5>
-					<br />
-					<br />
+				
+				<div className="container" >
+				<div >
+                   
+				   <div className="row  home-card">
+					   <div className="col-md-6  ">
+							   <h1 className="bold" >Learn, Collaborate, Innovate</h1><br/>
+							   <p>Unleashing Potential Through Collaboration,Empowering Education Together</p>
+							   <ul className="lists-boxes">
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Engaging Learning </li>
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Learn and practice through one platform</li>
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Collaboration</li>
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Connect with the community</li>
+							   
+								 </ul>
+					   </div>
+					   <div className="col-md-6 ">
+						   <img src={Left} alt="a"/>
+					   </div>
+				   </div>
+			   </div>
+
+
+			   <div >
+
+				<div className="space"></div>
+                   
+				   <div className="row  home-card">
+				   <div className="col-md-6 ">
+						   <img src={Right} alt="a"/>
+					   </div>
+					   <div className="col-md-6  ">
+							   <h1 className="bold" >Learn, Collaborate, Innovate</h1><br/>
+							   <p>Unleashing Potential Through Collaboration,Empowering Education Together</p><br/>
+							   <ul className="lists-boxes">
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Engaging Learning </li>
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Learn and practice through one platform</li>
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Collaboration</li>
+								   <li><i className="fa fa-check all-icons col" aria-hidden="true"></i>Connect with the community</li>
+							   
+								 </ul>
+					   </div>
+					 
+				   </div>
+			   </div>
+
+			   <div className="space"></div>
 					<div className="row">
-						<div className="col-md-3"></div>
+					<div className="left-space"></div>
+						
 						<div
 							class="card card-img col-md-3 shadow-sm p-3 mb-5"
 							style={{ margin: "30px", width: "21rem" }}
@@ -73,8 +122,11 @@ export default function Home() {
 						<div className="col-md-3"></div>
 					</div>
 
+
+					
+
 					<div className="row">
-						<div className="col-md-3"></div>
+						<div className="left-space"></div>
 						<div
 							class="card card-img col-md-3 shadow-sm p-3 mb-5 "
 							style={{ margin: "30px", width: "21rem" }}

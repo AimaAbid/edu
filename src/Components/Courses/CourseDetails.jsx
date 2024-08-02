@@ -399,7 +399,7 @@ export default function CourseDetails() {
 					</li>
 					<li>
 						{" "}
-						<Link to="/exam/1">Final Exam</Link>
+						<Link to="/exam">Final Exam</Link>
 					</li>
 				</ul>
 			</div>

@@ -20,7 +20,7 @@ export default function MainPage() {
 	return (
 		<div>
 			<MainPageHeader />
-			<div className="main-page container ">
+			<div className="main-page ">
 				<div className="search-results"></div>
 				<div>
 					<div>
@@ -34,7 +34,7 @@ export default function MainPage() {
 				</div>
 
 				{posts.map((post) => (
-					<div className="container post">
+					<div className=" post">
 						<p id="title">{post.title} </p>
 
 						<br />

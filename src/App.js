@@ -26,6 +26,7 @@ import Sponsor from "./Components/Register/Sponsor";
 import Quiz11 from "./Components/Courses/Quiz11";
 import CourseDetails from "./Components/Courses/CourseDetails";
 import PerformanceDashboard from "./Components/UserPageLinks/PerformanceDashboard";
+import Exam from "./Components/Courses/Exam";
 
 //for now since we dont have login or signup logic we paste posts in routes "/"
 
@@ -58,6 +59,7 @@ function App() {
 				<Route path="/quiz/:moduleId" element={<Quiz11 />}></Route>
 				<Route path="/course-details/:moduleId" element={<CourseDetails />}></Route>
 				<Route path="/performance-dashboard" element={<PerformanceDashboard />}></Route>
+				<Route path="/exam" element={<Exam />}></Route>
 			</Routes>
 		</div>
 	);

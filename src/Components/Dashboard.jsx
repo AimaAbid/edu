@@ -22,6 +22,9 @@ export default function Dashboard() {
 					<Link to="/details/1">Personal Details</Link>
 				</li>
 				<li>
+					<Link to="https://meet.google.com/ivh-jyfx-sof">Discussion Room</Link>
+				</li>
+				<li>
 					<Link to="/create-post">Create Post</Link>
 				</li>
                 <li>
@@ -30,6 +33,8 @@ export default function Dashboard() {
                 <li>
 					<Link to="/main-page">Go Back</Link>
 				</li>
+				
+				
 				
 				
 			</ul>

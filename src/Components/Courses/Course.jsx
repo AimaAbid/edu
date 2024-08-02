@@ -71,7 +71,7 @@ export default function Course() {
 							</li>
 							
 						</ul>
-						<li> <Link to="/exam/1">Final Exam</Link></li>
+						<li> <Link to="/exam">Final Exam</Link></li>
 					</li>
 				</ul>
 			</div>
