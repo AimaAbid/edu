@@ -33,6 +33,9 @@ export default function Dashboard() {
                 <li>
 					<Link to="/main-page">Go Back</Link>
 				</li>
+				<li>
+				<Link to="/">Logout!</Link>
+				</li>
 				
 				
 				

@@ -14,9 +14,12 @@ export default function Course() {
 	return (
 		<div className="course-container">
 			<div className="course-header">
-				<div className="header-items">EduCollabHub</div>
-				<div className="header-items">Introduction to Cyber Security</div>
-				<div className="header-items" onClick={toggleSidebar}>
+				<div className="header-items">EduLearnSync</div>
+				<div className="header-items ">Introduction to Cyber Security</div>
+				<div className="header-items "><Link to="/performance-dashboard">Performance</Link></div>
+				<div className="header-items "><Link to="/leaderboard">Leader Board</Link></div>
+				<div className="header-items "><Link to="/course-list">Go Back</Link></div>
+				<div className="header-items outline" onClick={toggleSidebar}>
 					Course Outline
 				</div>
 			</div>

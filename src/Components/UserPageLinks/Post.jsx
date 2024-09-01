@@ -34,7 +34,7 @@ const Post = () => {
 						<i class="fa fa-rss" aria-hidden="true">
 							&nbsp;
 						</i>
-						EduCollabHub
+						EduLearnSync
 					</div>
 
 					<div className="both" id="dash-right">
@@ -48,6 +48,9 @@ const Post = () => {
 				<div className="post-container">
 					<h1 className="post-title">{post.title}</h1>
 					<p className="post-author" style={{textAlign:"center"}}><img src={`http://localhost:8000/uploads/${profile}`} className="comment-picture" alt="profile" />  Posted by {postOwner}</p>
+					<p className="post-author" style={{ textAlign: "center" }}>
+						Posted on {post.date}
+					</p>
 					
 					<img className="post-image" src={`http://localhost:8000/uploads/${post.imgPath}`} alt="Post" />
 					<br /><br /><br /><br />

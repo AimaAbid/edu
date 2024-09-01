@@ -280,6 +280,13 @@ export default function CourseDetails() {
 			description4:
 				"Have you ever had to delete data or get rid of a hard drive? If so, did you take any precautions to safeguard the data to keep it from falling into the wrong hands.To erase data so that it is no longer recoverable, it must be overwritten with ones and zeroes multiple times, using tools specifically designed to do just that. SDelete from Microsoft claims to have ability to remove sensitive files completely. Shred for Linux and Secure Empty Trash for Mac OS X claim to provide a similar service .The only way to be certaIn that data or files are not recoverable is to physically destroy the hard drive or storage device. Many criminals have taken advantage of files thought to be impenetrable or irrecoverable.Don’t forget about data that may be stored online in the cloud. These copies will also need to be deleted.",
 		},
+		// {
+		// 	"module":"4",
+		// 	"subModule":"4.1",
+		// 	"heading1":"",
+		// 	"description1":"",
+		// 	"imgUrl1":""
+		// }
 	];
 	useEffect(() => {
 		// Fetching data based on the id parameter
@@ -332,9 +339,13 @@ export default function CourseDetails() {
 	return (
 		<div className="course-container">
 			<div className="course-header">
-				<div className="header-items"></div>
-				<div className="header-items">Course Details</div>
-				<div className="header-items"><Link to="/course-list">Go Back</Link></div>
+				<div className="header-items">EduLearnSync</div>
+				<div className="header-items ">Introduction to Cyber Security</div>
+				<div className="header-items "><Link to="/performance-dashboard">Performance</Link></div>
+				<div className="header-items "><Link to="/leaderboard">Leader Board</Link></div>
+				<div className="header-items outline" onClick={toggleSidebar}>
+					Course Outline
+				</div>
 			</div>
 
 			<div className={`course-sidebar ${sidebarActive ? "active" : ""}`}>
@@ -378,7 +389,7 @@ export default function CourseDetails() {
 								</Link>
 							</li>
 							<li>
-								<Link to="/course-details/3.2">Data Maintenance</Link>
+								<Link to="/course-details/3.2">3.2 Data Maintenance</Link>
 							</li>
 						</ul>
 					</li>
@@ -387,12 +398,12 @@ export default function CourseDetails() {
 						<ul>
 							<li>
 								<Link to="/course-details/4.1">
-									Cybersecurity Devices and Technologies
+									4.1 Cybersecurity Devices and Technologies
 								</Link>
 							</li>
 							<li>
 								<Link to="/course-details/4.2">
-									Behavior Approach to Cybersecurity
+									4.2 Behavior Approach to Cybersecurity
 								</Link>
 							</li>
 						</ul>
@@ -482,7 +493,7 @@ export default function CourseDetails() {
 								<button className="btn btn-success" onClick={() => handleAnswer(q._id)}>Submit</button>
 								{feedback[q._id] && (
             <div className="card card-feedback answerFeedback">
-              {feedback[q._id].correct ? "Correct!" : "Wrong!"} Points: {feedback[q._id].points}
+              {feedback[q._id].correct ? "Correct!" : "Wrong!"}  {feedback[q._id].insight}
             </div>
           )}
 							</div>

@@ -9,8 +9,8 @@ export default function Footer() {
     <footer className='' id=''>
 
         <div className="heading-footer">
-            <span style={{'color':'#333'}}>Edu Collab </span>
-            <span style={{'color':'#5cad3d'}}>Hub</span>
+            <span style={{'color':'#333'}}>EduLearn </span>
+            <span style={{'color':'#5cad3d'}}>Sync</span>
 		</div>
 
 	  <ul className="all">
@@ -20,20 +20,20 @@ export default function Footer() {
 	  </ul>
 
       <ul className="all">
-	  	<li><Link to="">Community</Link></li>
-	  	<li><Link to="">Whats New!</Link></li>
+	  	<li><Link to="">Login</Link></li>
+	  	<li><Link to="">Sign Up</Link></li>
 	  	
 	  </ul>
 
       <ul className="all">
-	  	<li><Link to="">Our Team</Link></li>
-	  	<li><Link to="">Our Office</Link></li>
+	  	<li><Link to="">Whats New!</Link></li>
+	  	<li><Link to="">Posts</Link></li>
 	  	
 	  </ul>
 
     <ul className="all">
-	  	<li><Link to="">Our Team</Link></li>
-	  	<li><Link to="">Our Office</Link></li>
+	  	<li><Link to="">EduSkillSync</Link></li>
+	  	<li><Link to="">&copy; 2024</Link></li>
 	  	
 	  </ul>
 

@@ -1,11 +1,11 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import Post from "./Post";
-import { Link } from "react-router-dom";
+
+
+
 import Footer from "./Footer";
 import MainPageHeader from "./MainPageHeader";
 import { useEffect, useState } from "react";
-import { title } from "process";
+
 import { useNavigate } from "react-router-dom";
 
 export default function MainPage() {
@@ -21,7 +21,7 @@ export default function MainPage() {
 		<div>
 			<MainPageHeader />
 			<div className="main-page ">
-				<div className="search-results"></div>
+				
 				<div>
 					<div>
 						{searchResults.map((post) => (

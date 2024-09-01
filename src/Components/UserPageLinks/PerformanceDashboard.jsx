@@ -1,39 +1,4 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import "./PerformanceDashboard.css";
 
-// export default function PerformanceDashboard(){
-//   const [points, setPoints] = useState(0);
-//   const [badges, setBadges] = useState([]);
-//   var userId=localStorage.getItem('userId');
-
-//   useEffect(() => {
-//     axios.get(`http://localhost:8000/quiz/points/${userId}`).then(response => {
-//       setPoints(response.data.points);
-//     });
-//     axios.get(`http://localhost:8000/quiz/badges/${userId}`).then(response => {
-//       setBadges(response.data.badges);
-//     });
-//   }, [userId]);
-
-//   return (
-//     <div>
-//      <div className="course-heading">Performance Dashboard</div>
-     
-//       <div className="container">
-//       <p>Points: {points}</p>
-//       {badges.map((badge, index) => (
-        
-       
-//        <div>{badge}</div>
-//      ))}
-//       </div>
-      
-       
-      
-//     </div>
-//   );
-// };
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -41,7 +6,8 @@ import "./PerformanceDashboard.css";
 import Rookie from "./badges/Rookie.png";
 import Traveller from "./badges/Traveller.jpg";
 import Adventurer from "./badges/adventurer.jpg";
-import Trailblazer from "./badges/trailblazer.jpg"
+import Trailblazer from "./badges/trailblazer.jpg";
+import CyberBadge from "./badges/cyberBadge.png";
 
 export default function PerformanceDashboard() {
   const [points, setPoints] = useState(0);
@@ -67,8 +33,9 @@ export default function PerformanceDashboard() {
   const badgeImages = {
     "Rookie": Rookie,
     "Traveller": Traveller,
-    "Trail Blazer": Adventurer,
-    "Adventurer": Trailblazer
+    "Trail Blazer": Trailblazer,
+    "Adventurer": Adventurer,
+    "Course Completion": CyberBadge
   };
 
   return (

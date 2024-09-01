@@ -33,13 +33,13 @@ export default function Home() {
 			<Header />
 			<div className="img-section">
 			<div className="text">
-			<p><strong>EduCollabHub</strong></p>
-			<p>EduCollabHub: Learn Together, Level Up Forever</p>
+			<p><strong>EduLearnSync</strong></p>
+			<p>EduLearnSync: Learn Together, Level Up Forever</p>
 			</div>
 			</div>
 			<div className="home ">
-				<h1>EduCollabHub</h1>
-				<h5>EduCollabHub: Learn Together, Level Up Forever</h5>
+				<h1>EduLearnSync</h1>
+				<h5>EduLearnSync: Learn Together, Level Up Forever</h5>
 			
 
 				
@@ -159,7 +159,7 @@ export default function Home() {
 					<h2>About Us</h2>
 					<div className="about-us">
 						<p>
-							At EduCollabHub, we believe in the transformative power of
+							At EduLearnSync, we believe in the transformative power of
 							collective intelligence, where students from diverse backgrounds
 							converge to shape the future of education. Our platform is
 							designed to foster a global community of learners, empowering
@@ -170,7 +170,7 @@ export default function Home() {
 							Led by subject matter experts, we ensure the reliability of
 							materials, creating a trustworthy space for academic enrichment.
 							Join us on this educational journey where innovation meets
-							collaboration. EduCollabHub is more than a platform; it's a
+							collaboration. EduLearnSync is more than a platform; it's a
 							dynamic space where your ideas and contributions shape the
 							landscape of learning. Let's collaborate, learn, and inspire
 							together at EduCollabHub!
@@ -191,7 +191,7 @@ export default function Home() {
 							evaluation of diverse learning resources in the forms of videos,
 							pictures, text, and audio. As students navigate through their
 							academic journeys, the abundance of information available can be
-							overwhelming. EduCollabHub seeks to address this challenge by
+							overwhelming. EduLearnSync seeks to address this challenge by
 							providing a curated space where subject matter experts
 							authenticate and validate the educational material before it is
 							shared with the wider community.{" "}
@@ -215,7 +215,7 @@ export default function Home() {
 						</p>
 
 						<p>
-							Through EduCollabHub, we envision a global network of students
+							Through EduLearnSync, we envision a global network of students
 							collaboratively contributing to a repository of authentic and
 							diverse educational resources.{" "}
 						</p>

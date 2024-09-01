@@ -1,5 +1,5 @@
 import React from 'react'
-import Signupexpert from "./Register/Signupexpert";
+
 import Signupstudent from "./Register/Signupstudent"
 // import Header from './Header';
 

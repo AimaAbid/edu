@@ -12,7 +12,12 @@
 .exam-wrapper>ul>li
 {
     margin-top: 10px;
+    list-style: none;
 }
+.icon-style{
+  padding: 10px;
+}
+
 
 
 

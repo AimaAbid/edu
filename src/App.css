@@ -378,6 +378,10 @@ border-radius: 2%;
   z-index: -1;
 
 }
+.place-center{
+  margin-left: 20%;
+  
+}
 
 /* .edit-page-form-position{
   margin-top: 80px;

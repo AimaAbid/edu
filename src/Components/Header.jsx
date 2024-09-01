@@ -10,7 +10,7 @@ export default function Header() {
 					<i class="fa fa-rss" aria-hidden="true">
 						&nbsp;
 					</i>
-					EduCollabHub
+					EduLearnSync
 				</div>
 				<div className="right">
 					<ul>

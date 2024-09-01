@@ -17,9 +17,10 @@
   align-items: center;
   
   font-size: 1rem;
-  background-image: linear-gradient(to right bottom, #a61713, #be0035, #c50068, #aa00ac, #0000f7);left: 0;
-  color: white;
+  /* background-image: linear-gradient(to right bottom, #a61713, #be0035, #c50068, #aa00ac, #0000f7);left: 0;
+  color: white; */
   padding: 10px 20px;
+  background-color: whitesmoke;
  
 }
 
@@ -29,6 +30,12 @@
   flex-direction: column;
   transition: margin-left 0.3s;
   min-height: 100vh;
+}
+.outline{
+  color: darkolivegreen;
+  font-size: larger;
+  font-weight: bold;
+
 }
 
 .course-sidebar {

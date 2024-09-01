@@ -109,7 +109,7 @@ export default function PostNoEdit() {
 					<i className="fa fa-rss" aria-hidden="true">
 						&nbsp;
 					</i>
-					EduCollabHub
+					EduLearnSync
 				</div>
 				<div className="both" id="dash-right">
 					<Link to="/main-page">Go Back</Link>

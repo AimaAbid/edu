@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../App.css"
-import PayPalLink from './UserPageLinks/PayPalLink'
+
 
 export default function MainPageHeader() {
   return (
@@ -11,7 +11,7 @@ export default function MainPageHeader() {
 					<i class="fa fa-rss" aria-hidden="true">
 						&nbsp;
 					</i>
-					EduCollabHub
+					EduLearnSync
 				</div>
 				<div id="right">
 					<ul>
@@ -19,10 +19,11 @@ export default function MainPageHeader() {
 						<li>
 							<Link to="/course-list">Courses!</Link>
 						</li>
-						
 						<li>
-							<div><PayPalLink/></div>
+							<Link to="/main-page">Go Back</Link>
 						</li>
+						
+						
 						
 						<li >
 							<Link to="/user" ><i class="fa fa-user-circle" aria-hidden="true" ></i></Link>

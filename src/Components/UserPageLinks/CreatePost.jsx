@@ -75,10 +75,10 @@ export default function CreatePost() {
 
     return (
         <div>
-            <DashHeader />
-            <Dashboard />
-            <div className="position-adjustment">
-                <div className="create-auth">
+          
+           
+          
+                <div className="create-auth place-center">
                     <div className="form">
                         <div className="form-group">
                             <input
@@ -121,6 +121,6 @@ export default function CreatePost() {
                     </div>
                 </div>
             </div>
-        </div>
+       
     );
 }
